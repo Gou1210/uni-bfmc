@@ -1,0 +1,1 @@
+<view class="page"><view class="frame"><text>{{anli.title}}</text><view class="siteTime"><text>{{anli.site}}</text><text>{{anli.time}}</text></view><block s-for="{{anli.img}}" s-for-item="item" s-for-index="__i0__"><view><image mode="widthFix" src="{{item}}"></image></view></block></view></view>

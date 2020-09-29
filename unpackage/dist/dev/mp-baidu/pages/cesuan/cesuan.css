@@ -1,0 +1,21 @@
+
+.tabContent{
+	display: none;
+}
+.tabs_title{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+}
+.titleItem{
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	        flex: 1;
+}
+.active{
+	border: #007AFF 2rpx solid;
+}
+.dis{
+	display: block;
+}
+

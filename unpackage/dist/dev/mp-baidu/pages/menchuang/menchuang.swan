@@ -1,0 +1,1 @@
+<view class="page"><rich-text nodes="{{word}}" bindtap="tap"></rich-text></view>

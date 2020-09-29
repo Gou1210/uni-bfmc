@@ -1,0 +1,137 @@
+<template>
+	<view class="page">
+                    <swiper class="swiper" indicator-dots="true" autoplay="true" interval="3000" duration="500" circular>
+                        <swiper-item>
+                           <image src="https://6266-bfxy-hpbml-1302612614.tcb.qcloud.la/image/swiper/swiper.jpg?sign=eee6304e1dff48e0f388fea9672f37a1&t=1600911359" mode="widthFix" class="swiperImg"></image>
+                        </swiper-item>
+                        <swiper-item>
+                            <image src="https://6266-bfxy-hpbml-1302612614.tcb.qcloud.la/image/swiper/swiper1.jpg?sign=42b1bfd27ab587de1d94a6e264ca3781&t=1600911423" mode="widthFix"  class="swiperImg"></image>
+                        </swiper-item>
+                    </swiper>
+					
+					<view class="laba">
+					    <image  mode="widthFix" src="https://6465-dev-xkauj-1302377652.tcb.qcloud.la/image/home/laba.png?sign=3f92fa91df1f40936c237b5136768651&t=1592792023" />
+					    <view >
+					       本商城免费为客户计算价格型号，客户只需提供门窗样式，面积，配件等，自动生成价格，价格公道透明，欢迎使用转发收藏。
+					    </view>
+					</view>
+					
+					<view >
+					    <image class="zizhu" mode="widthFix" src="https://6266-bfxy-hpbml-1302612614.tcb.qcloud.la/image/home/s6.jpg?sign=2465649c1b07aaf6d6fd32acc68be9ad&t=1594968018" />
+					</view>
+					
+					<view class="frame" >
+					
+					<view @click="reLaunch" class="box" >
+					<image mode="widthFix"  src="https://6266-bfxy-hpbml-1302612614.tcb.qcloud.la/%E4%BA%A7%E5%93%81/%E6%B4%9E%E5%8F%A3/%E5%B0%81%E9%9D%A2/%E5%8D%95%E6%89%87.jpg?sign=d1b450806a9732d74fb1f90b12e53f98&t=1597016438"/>
+					<view >洞口窗</view>
+					</view>
+					
+					<navigator url="../yangtai/yangtai" class="box" >
+					<image mode="widthFix"  src="https://6266-bfxy-hpbml-1302612614.tcb.qcloud.la/%E4%BA%A7%E5%93%81/%E9%98%B3%E5%8F%B0/%E5%B0%81%E9%9D%A2/L%E5%9E%8B/L%E5%9E%8B%E5%8D%95%E6%89%871.jpg?sign=392cdc19abe36545b2c509f29d5f8aa4&t=1597016469"/>
+					<view >阳台窗</view>
+					</navigator>
+					
+					<navigator url="../hejinmen/hejinmen" class="box" >
+					<image mode="widthFix"  src="https://6266-bfxy-hpbml-1302612614.tcb.qcloud.la/%E4%BA%A7%E5%93%81/%E5%90%88%E9%87%91%E9%97%A8/%E5%90%88%E9%87%91%E9%97%A85.jpg?sign=527bfb928abf86bacd65b59935f95e1b&t=1597018418"/>
+					<view >钛镁合金窗</view>
+					</navigator>
+					
+					
+					</view>
+					
+					<navigator url="../mine/mine" class="women">
+					    <text class="guanyu">关/于/我/们</text>
+					    <view >
+					        <image src="https://6465-dev-xkauj-1302377652.tcb.qcloud.la/image/home/%E5%B7%A5%E5%8E%821.jpg?sign=2fef43b5750112f6329d0b217728a9a6&t=1592795500" mode="widthFix"/>
+					        <text >我们是一家设计、生产、销售、安装、售后服务为一体的专业门窗公司，自有工厂和安装队伍，支持定制批发零售，以高品质的门窗回馈每一位客户，让您屋里的每一扇门窗都是让人称赞的亮眼风景线。</text>
+					    </view>
+					</navigator>
+					<view class="end-title">
+					　　<view @tap="change(0)" :class="{btna:btnnum == 0}">安装案例</view>
+					  　<view @tap="change(1)" :class="{btna:btnnum == 1}">购买须知</view>
+					　　<view @tap="change(2)" :class="{btna:btnnum == 2}">门窗知识</view>
+					</view>
+					<view class="end-cont" :class="{dis:btnnum == 0}">
+					 　　    <navigator v-for="item in anli" :url="'../anli/anli?id='+item.id" class="anli" >
+        <image mode="widthFix" :src="item.img" />
+        <view >
+            <text style="color:#e1251b" >{{item.title}}</text>
+            <view >
+            <text >安装地点:{{item.site}}</text>
+            <text >安装时间:{{item.time}}</text>
+            </view>
+        </view>
+    </navigator>
+					</view>
+					<view class="end-cont" :class="{dis:btnnum == 1}">
+
+					 　　    <navigator v-for="item in zhishi" :url="'../zhishi/zhishi?id='+item.id" class="anli" >
+        <image mode="widthFix" :src="item.img" />
+        <view >
+            <text style="color:#e1251b" >{{item.title}}</text>
+            <view >
+            <text >来源:{{item.author}}</text>
+            </view>
+        </view>
+    </navigator>
+					</view>
+					
+					<view class="end-cont" :class="{dis:btnnum == 2}">
+					 　　    <navigator v-for="item in menchuang" :url="'../menchuang/menchuang?id='+item.id" class="anli" >
+        <image mode="widthFix" :src="item.img" />
+        <view >
+            <text style="color:#e1251b" >{{item.title}}</text>
+            <view >
+            <text >来源:{{item.author}}</text>
+            </view>
+        </view>
+    </navigator>
+					</view>
+
+	</view>
+	
+	
+	
+</template>
+
+<script>
+
+	export default {
+		data() {
+			return {
+				 btnnum: 0,
+				 anli:[],
+				 zhishi:[],
+				 menchuang:[],
+			}
+		},
+		onLoad() {
+			uni.request({
+				url:this.serverUrl+"api/data/home",
+				success:(res)=>{
+					console.log(res)
+					this.anli = res.data.data[0].anli
+					this.menchuang = res.data.data[0].menchuang
+					this.zhishi = res.data.data[0].zhishi
+				}
+			});
+
+		},
+
+methods:{
+	   change(e) {
+	      this.btnnum = e
+	  },
+	  reLaunch(){
+		  uni.reLaunch({
+		      url: '../dongkou/dongkou'
+		  });
+	  }
+	},
+	}
+</script>
+
+<style>
+@import url("./index.css");
+</style>

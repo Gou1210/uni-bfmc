@@ -1,0 +1,194 @@
+.swiper{
+	height: 320rpx;
+}
+.swiperImg{
+	/* width: 100%; */
+	/* height:800upx ; */
+}
+.laba{
+    height: 100rpx;
+    background-color: #fff;
+    font-size: 23rpx;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+            align-items: center;
+}
+.laba image{
+      width: 10%;
+}
+.frame{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+            align-items: center;
+    -webkit-align-content: space-between;
+            align-content: space-between;
+    background-color: #fff;
+}
+.box{
+    width: 150rpx;
+    height: 100px;
+    border: 1px solid #666;
+    border-radius: 20rpx;
+    margin: 10rpx;
+    margin-left: 30rpx;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+            align-items: center;
+    -webkit-justify-content: space-around;
+            justify-content: space-around;
+    font-size: 22rpx;
+}
+.box image{
+    border-radius: 20rpx;
+}
+.frame image{
+    width: 140rpx;
+}
+.open{
+    font-size: 20rpx;
+}
+.women{
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+                flex-direction: column;
+       -webkit-box-align: center;
+       -webkit-align-items: center;
+               align-items: center;
+       margin-top: 20rpx;
+       margin-bottom: 20rpx;
+       background-color: #fff;
+       padding: 20rpx;
+}
+.guanyu{
+        margin-bottom: 10rpx;
+        color: cornflowerblue;
+}
+.women view{
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+}
+.women view image{
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+                flex: 1;
+        margin-right: 10rpx;
+}
+.women view text{
+        -webkit-box-flex: 2;
+        -webkit-flex: 2;
+                flex: 2;
+        font-size: 22rpx;
+}
+.end-title{
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+}
+.end-title view{
+      -webkit-box-flex: 1;
+      -webkit-flex-grow: 1;
+              flex-grow: 1;
+      text-align: center;
+}
+.end-cont{
+      display: none;
+}
+.btna{
+  color:cornflowerblue;
+  border-bottom: 5rpx solid currentColor;
+}
+.dis{
+      display: block;
+}
+.anli{
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        font-size: 28rpx;
+        background-color: #fff;
+        margin: 10rpx;
+        border-radius: 20rpx;
+}
+.anli image{
+        width: 100rpx;
+        height: 100rpx;
+        border-radius: 20rpx;
+        margin: 20rpx;
+}
+.anli view{
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+              flex-direction: column;
+      margin-top: 10rpx;
+}
+.anli view view{
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+              justify-content: space-between;
+      border-top: solid #666 2rpx;
+}
+.anli text{
+      margin: 10rpx;
+}
+.hongbao{
+      position: fixed;
+      width: 600rpx;
+      /* display: flex; */
+      /* justify-content: center; */
+      top: 200rpx;
+      left: 50%;
+      margin-left: -250rpx;
+}
+.hongbao icon{
+      position: absolute;
+      top: 0rpx;
+      left: 450rpx;
+}
+.hongbao .hbImg{
+      border: #666;
+      width: 500rpx;
+}
+.hbImgNone{
+      display: none;
+}
+.zizhu{
+}
+.bg {
+      height: 100%;
+      width: 100%;
+}
+

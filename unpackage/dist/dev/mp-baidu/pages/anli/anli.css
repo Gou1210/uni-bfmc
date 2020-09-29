@@ -1,0 +1,14 @@
+
+.frame{
+    padding: 100rpx;
+    padding-top: 0;
+}
+.siteTime{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+            justify-content: space-between;
+}
+

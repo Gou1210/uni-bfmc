@@ -1,0 +1,24 @@
+
+.end-title{
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+}
+.end-title view{
+        -webkit-box-flex: 1;
+        -webkit-flex-grow: 1;
+                flex-grow: 1;
+        text-align: center;
+}
+.end-cont{
+        display: none;
+        background: #C8C7CC;
+}
+.btna{
+        color: #FFFFFF;
+        background: #00A0FF;
+}
+.dis{
+        display: block;
+}    
+
