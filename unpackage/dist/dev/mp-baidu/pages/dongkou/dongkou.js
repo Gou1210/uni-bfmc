@@ -260,46 +260,387 @@ var _default =
 
   },
   methods: {
-    heightclick: function heightclick() {
+    heightTap: function heightTap(e) {
+      var height = e.detail.value;
+      var width0 = this.width0;
+      var num = this.num;
+      var shanID = this.shanID;
+      var square = width0 * height;
+      if (square < 1.5 && square > 0) {
+        square = 1.5;
+      }
+      var standardPriceSum = Math.round(square * this.standardPrice) * num;
+      var partsPriceSum = Math.round(square * this.partsPrice) * num;
+      if ((square + 0.5) / 3.3 < shanID + 1 && square > 0) {
+        standardPriceSum = standardPriceSum + 300;
+      }
+
+      this.standardPriceSum = standardPriceSum;
+      this.partsPriceSum = partsPriceSum;
+      this.height = height;
+      this.square = square;
 
     },
-    swiperclick: function swiperclick() {
+
+    wordTap: function wordTap(e) {
+      var keyID = e.currentTarget.dataset.keyid * 1;
+      var subID = e.currentTarget.dataset.subid * 1;
+      var square = this.square;
+
+      var num = this.num;
+      var parts = this.parts;
+      var partsArr = [];
+      var product = parts[keyID].xuanze;
+      var partsPrice = 0;
+
+      product.forEach(function (v, i) {return i == subID ? v.isActive = true : v.isActive = false;});
+
+      for (var i = 0; i < parts.length; i++) {
+
+        for (var y = 0; y < parts[i].xuanze.length; y++) {
+          if (parts[i].xuanze[y].isActive) {
+
+            partsPrice += parts[i].xuanze[y].price;
+
+            partsArr.push(parts[i].xuanze[y].title);
+          }
+        }
+      }
+
+      var partsPriceSum = Math.round(square * partsPrice * num);
+
+      parts[keyID].xuanze = product;
+      this.parts = parts;
+      this.partsPrice = partsPrice;
+      this.partsPriceSum = partsPriceSum;
+      this.partsArr = partsArr;
+    },
+    swiperTap: function swiperTap(e) {
+
+      var shanID = this.shanID;
+      var current = e.detail.current;
+      console.log(current);
+      var square = this.square;
+      var num = this.num;
+      var standardPriceSum = this.standardPriceSum;
+      var standardPrice = this.standardPrice;
+      var shanPrice = this.shuju[0].scrollimg[shanID][current].price * square;
+
+      var shan = this.shuju[0].scrollimg[shanID][current].title;
+
+
+
+      standardPriceSum = Math.round((shanPrice + standardPrice) * square * num);
+      if ((square + 0.5) / 3.3 < shanID + 1 && square > 0) {
+        standardPriceSum = standardPriceSum + 300;
+      }
+      this.standardPrice = standardPrice;
+      this.standardPriceSum = standardPriceSum;
+      this.shan = shan;
+      this.current = current;
+    },
+    widthTap: function widthTap(e) {
+      var width0 = e.detail.value;
+      var height = this.height;
+      var num = this.num;
+      var shanID = this.shanID;
+      var square = width0 * height;
+
+      if (square < 1.5 && square > 0) {
+        square = 1.5;
+      }
+      var standardPriceSum = Math.round(square * this.standardPrice) * num;
+      if ((square + 0.5) / 3.3 < shanID + 1 && square > 0) {
+        standardPriceSum = standardPriceSum + 300;
+      }
+      var partsPriceSum = Math.round(square * this.partsPrice) * num;
+
+      this.standardPriceSum = standardPriceSum;
+      this.partsPriceSum = partsPriceSum;
+      this.width0 = width0;
+      this.square = square;
+    },
+    imgTap: function imgTap(e) {
+
+      var keyID = e.currentTarget.dataset.keyid * 1;
+      var subID = e.currentTarget.dataset.subid * 1;
+      var subNum = e.currentTarget.dataset.subnum * 1;
+      var shanID = this.shanID;
+      var subNum2 = this.subNum2;
+
+      var scrollImg = this.scrollImg;
+      var shan = this.shan;
+      var xing = this.xing;
+      var num = this.num;
+      var current = this.current;
+      var shuju = this.shuju;
+      var standardPriceSum = this.standardPriceSum;
+      var square = this.square;
+      var product = shuju[keyID].xuanze;
+      var standardPrice = 0;
+      if (keyID == 0) {
+        shan = this.shuju[0].scrollimg[subID][0].title;
+
+
+      }
+
+
+      if (keyID == 1) {
+        xing = this.shuju[1].xuanze[subID].title;
+
+      }
+
+
+      if (subNum != undefined) {
+        subNum2 = subNum;
+      }
+
+
+
+      product.forEach(function (v, i) {return i === subID ? v.isActive = true : v.isActive = false;});
+      for (var i = 0; i < shuju.length; i++) {
+
+        for (var y = 0; y < shuju[i].xuanze.length; y++) {
+          if (shuju[i].xuanze[y].isActive) {
+
+            standardPrice += shuju[i].xuanze[y].price;
+          }
+        }
+      }
+
+      standardPriceSum = Math.round(standardPrice * square) * num;
+
+      if (keyID === 0) {
+
+        scrollImg = [];
+
+        shuju[0].scrollimg[subID].forEach(function (v) {return (
+            scrollImg.push(v.img));});
+
+
+
+      }
+
+
+      var imageIndex = 0;
+      if (keyID == 1) {
+        imageIndex = current;
+      }
+
+      if (keyID == 0) {
+        shanID = subID;
+      }
+
+      if ((square + 0.5) / 3.3 < shanID + 1 && square > 0) {
+        standardPriceSum = standardPriceSum + 300;
+      }
+      shuju[keyID].xuanze = product;
+      this.shuju = shuju;
+      this.standardPrice = standardPrice;
+      this.standardPriceSum = standardPriceSum;
+      this.scrollImg = scrollImg;
+      this.shanID = shanID;
+      this.shan = shan;
+      this.xing = xing;
+      this.imageIndex = imageIndex;
+      this.subNum2 = subNum2;
+    },
+
+
+    touchStart: function touchStart(e) {
+      var keyID = e.currentTarget.dataset.keyid * 1;
+      var subID = e.currentTarget.dataset.subid * 1;
+
+
+
+      var parts = this.parts;
+
+      var product = parts[keyID].xuanze;
+
+
+      product.forEach(function (v, i) {return i == subID ? v.imgVisible = true : v.imgVisible = false;});
+
+
+      parts[keyID].xuanze = product;
+      this.parts = parts;
 
     },
-    widthclick: function widthclick() {
+    touchChend: function touchChend(e) {
+      var keyID = e.currentTarget.dataset.keyid * 1;
+      var subID = e.currentTarget.dataset.subid * 1;
 
+
+
+      var parts = this.parts;
+
+      var product = parts[keyID].xuanze;
+
+
+      product.forEach(function (v, i) {return i == subID ? v.imgVisible = false : v.imgVisible = false;});
+
+
+      parts[keyID].xuanze = product;
+      this.parts = parts;
     },
-    imgTap: function imgTap() {
+    parts1Tap: function parts1Tap(e) {
+      var keyID = e.currentTarget.dataset.keyid * 1;
+      var subID = e.currentTarget.dataset.subid * 1;
 
+      var num = this.num;
+      var parts1 = this.parts1;
+
+      var product = parts1[keyID].xuanze;
+      var parts1Price = 0;
+      var parts1Arr = [];
+      product.forEach(function (v, i) {return i == subID ? v.isActive = true : v.isActive = false;});
+
+      for (var i = 0; i < parts1.length; i++) {
+
+        for (var y = 0; y < parts1[i].xuanze.length; y++) {
+          if (parts1[i].xuanze[y].isActive) {
+
+            parts1Price += parts1[i].xuanze[y].price;
+            parts1Arr.push(parts1[i].xuanze[y].title);
+
+          }
+        }
+      }
+
+      var parts1PriceSum = parts1Price * num;
+
+      parts1[keyID].xuanze = product;
+      this.parts1 = parts1;
+      this.parts1Price = parts1Price;
+      this.parts1PriceSum = parts1PriceSum;
+      this.parts1Arr = parts1Arr;
     },
-    wordTap: function wordTap() {
+    touchStart1: function touchStart1(e) {
+      var keyID = e.currentTarget.dataset.keyid * 1;
+      var subID = e.currentTarget.dataset.subid * 1;
 
+
+
+      var parts1 = this.parts1;
+
+      var product = parts1[keyID].xuanze;
+
+
+      product.forEach(function (v, i) {return i == subID ? v.imgVisible = true : v.imgVisible = false;});
+
+
+      parts1[keyID].xuanze = product;
+      this.parts1 = parts1;
     },
-    touchStart: function touchStart() {
+    touchChend1: function touchChend1(e) {
+      var keyID = e.currentTarget.dataset.keyid * 1;
+      var subID = e.currentTarget.dataset.subid * 1;
 
-    },
-    touchChend: function touchChend() {
 
-    },
-    parts1Tap: function parts1Tap() {
 
-    },
-    touchStart1: function touchStart1() {
+      var parts1 = this.parts1;
 
-    },
-    touchChend1: function touchChend1() {
+      var product = parts1[keyID].xuanze;
 
+
+      product.forEach(function (v, i) {return i == subID ? v.imgVisible = false : v.imgVisible = false;});
+
+
+      parts1[keyID].xuanze = product;
+      this.parts1 = parts1;
     },
     jian: function jian() {
-
+      var num = this.num;
+      if (num <= 1) {
+        num = 1;
+        return num;
+      }
+      var standardPriceSum = this.standardPriceSum / num;
+      var partsPriceSum = this.partsPriceSum / num;
+      var parts1PriceSum = this.parts1PriceSum / num;
+      num = num - 1;
+      standardPriceSum = standardPriceSum * num;
+      partsPriceSum = partsPriceSum * num;
+      parts1PriceSum = parts1PriceSum * num;
+      this.num = num;
+      this.standardPriceSum = standardPriceSum;
+      this.partsPriceSum = partsPriceSum;
+      this.parts1PriceSum = parts1PriceSum;
     },
     jia: function jia() {
 
+      var num = this.num;
+      var standardPriceSum = this.standardPriceSum / num;
+      var partsPriceSum = this.partsPriceSum / num;
+      var parts1PriceSum = this.parts1PriceSum / num;
+
+      num = num + 1;
+      standardPriceSum = standardPriceSum * num;
+      partsPriceSum = partsPriceSum * num;
+      parts1PriceSum = parts1PriceSum * num;
+      this.num = num;
+      this.standardPriceSum = standardPriceSum;
+      this.partsPriceSum = partsPriceSum;
+      this.parts1PriceSum = parts1PriceSum;
     },
     dingdanTap: function dingdanTap() {
+      var goodsInfo = this.goodsInfo;
+      var scrollImg = this.scrollImg;
+      var shan = this.shan;
+      var xing = this.xing;
+      var partsArr = this.partsArr;
+      var parts1Arr = this.parts1Arr;
+      partsArr = partsArr.concat(parts1Arr);
+      goodsInfo.title = xing + shan;
+      goodsInfo.partsArr = partsArr;
+      goodsInfo.time = new Date();
+      var parts = this.parts;
+      goodsInfo.standardPriceSum = this.standardPriceSum;
+      goodsInfo.partsPriceSumCon = this.partsPriceSum + this.parts1PriceSum;
+      goodsInfo.standardParts = this.standardPriceSum + this.partsPriceSum + this.parts1PriceSum;
+      goodsInfo.square = this.square.toFixed(2);
+      goodsInfo.width0 = this.width0;
+      goodsInfo.width1 = this.width1;
+      goodsInfo.width2 = this.width2;
+      goodsInfo.height = this.height;
+      goodsInfo.num = this.num;
+      goodsInfo.img = scrollImg[0];
+      goodsInfo.checked = true;
 
+      this.goodsInfo = goodsInfo;
+      var goodsInfoArr = uni.getStorageSync('goodsInfoArr') || [];
+      goodsInfoArr.push(goodsInfo);
+      try {
+        uni.setStorageSync("goodsInfoArr", goodsInfoArr);
+        uni.showToast({
+          title: '加入成功',
+          icon: 'success',
+          mask: true });
+
+      } catch (e) {
+
+      } // error
+      // uni.setstos
+      // uni.request({
+      //         url: this.serverUrl+"api/data/car",
+      //   method:"POST",
+      //   data:{
+      //    goodsInfo:goodsInfo
+      //   }
+      //     })
+      //     .then(data => {//data为一个数组，数组第一项为错误信息，第二项为返回数据
+      //         var [error, res]  = data;
+      //         console.log(res.data);
+      //     })
+      //   uni.showToast({
+      //    title: '加入成功',
+      //    icon: 'success',
+      //    mask: true
+      //  });
     },
     carTap: function carTap() {
+      uni.reLaunch({
+
+        url: "../car/car" });
 
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-baidu/dist/index.js */ 1)["default"]))

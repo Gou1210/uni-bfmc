@@ -8,9 +8,9 @@
 
 
 .laba{
-    height: 100rpx;
+    height: 100upx;
     background-color: #fff;
-    font-size: 23rpx;
+    font-size: 23upx;
     display: flex;
     align-items: center;
 }
@@ -27,40 +27,40 @@
     background-color: #fff;
   }
   .box{
-    width: 150rpx;
+    width: 150upx;
     height: 100px;
-    border: 1rpx solid #666;
-    border-radius: 20rpx;
-    margin: 10rpx;
-    margin-left: 30rpx;
+    border: 1upx solid #666;
+    border-radius: 20upx;
+    margin: 10upx;
+    margin-left: 30upx;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    font-size: 22rpx;
+    font-size: 22upx;
   }
   .box image{
-    border-radius: 20rpx;
+    border-radius: 20upx;
   }
   .frame image{
-    width: 140rpx;
+    width: 140upx;
   }
   
   .open{
-    font-size: 20rpx;
+    font-size: 20upx;
   }
   
    .women{
         display: flex;
         flex-direction: column;
        align-items: center;
-       margin-top: 20rpx;
-       margin-bottom: 20rpx;
+       margin-top: 20upx;
+       margin-bottom: 20upx;
        background-color: #fff;
-       padding: 20rpx;
+       padding: 20upx;
     }
     .guanyu{
-        margin-bottom: 10rpx;
+        margin-bottom: 10upx;
         color: cornflowerblue;
     }
     .women view{
@@ -68,11 +68,11 @@
     }
     .women view image{
         flex: 1;
-        margin-right: 10rpx;
+        margin-right: 10upx;
     }
     .women view text{
         flex: 2;
-        font-size: 22rpx;
+        font-size: 22upx;
     }
   .end-title{
       display: flex;
@@ -86,56 +86,56 @@
   }
   .btna{
   color:cornflowerblue;
-  border-bottom: 5rpx solid currentColor;
+  border-bottom: 5upx solid currentColor;
   }
   .dis{
       display: block;
   }    
     .anli{
         display: flex;
-        font-size: 28rpx;
+        font-size: 28upx;
         background-color: #fff;
-        margin: 10rpx;
-        border-radius: 20rpx;
+        margin: 10upx;
+        border-radius: 20upx;
     }
     .anli image{
-        width: 100rpx;
-        height: 100rpx;
-        border-radius: 20rpx;
-        margin: 20rpx;
+        width: 100upx;
+        height: 100upx;
+        border-radius: 20upx;
+        margin: 20upx;
     }
     .anli view{
       display: flex;
       flex-direction: column;
-      margin-top: 10rpx;
+      margin-top: 10upx;
     }
     .anli view view{
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      border-top: solid #666 2rpx;
+      border-top: solid #666 2upx;
     }
     .anli text{
-      margin: 10rpx;
+      margin: 10upx;
     }
   
     .hongbao{
       position: fixed;
-      width: 600rpx;
+      width: 600upx;
       /* display: flex; */
       /* justify-content: center; */
-      top: 200rpx;
+      top: 200upx;
       left: 50%;
-      margin-left: -250rpx;
+      margin-left: -250upx;
     }
     .hongbao icon{
       position: absolute;
-      top: 0rpx;
-      left: 450rpx;
+      top: 0upx;
+      left: 450upx;
     }
     .hongbao .hbImg{
       border: #666;
-      width: 500rpx;
+      width: 500upx;
       
     }
   
