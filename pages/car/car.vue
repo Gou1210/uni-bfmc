@@ -76,7 +76,7 @@
 					</view>
 					<view class="yunfei">(已包含配送安装费用)</view>
 				</view>
-				<button type="primary">
+				<button type="primary" @tap="addOrder">
 					<view>提交意向</view>
 					<view>(非支付)</view>
 				</button>
@@ -107,6 +107,7 @@
 						try {
 					
 						  let res = uni.getStorageSync('goodsInfoArr')
+						  
 						
 						  res.forEach(item => {
 						  
@@ -237,6 +238,36 @@
 			        this.allChecked = allChecked
 			        this.totalPrice = totalPrice
 			        this.juanGai = juanGai
+
+			   },
+			   addOrder(){
+				   new Promise((resolve,reject)=>{
+					   this.res.mobile = uni.getStorageSync('mobile')
+					   resolve()
+				   }).then(()=>{
+					   if(this.res.mobile){
+					    uni.request({
+					            url: this.serverUrl+"api/data/order",
+					   						   method:"POST",
+					   						   data:{
+					   							   order:this.res
+					   						   }
+					        })
+					        .then(data => {//data为一个数组，数组第一项为错误信息，第二项为返回数据
+					            var [error, res]  = data;
+					   
+					        })
+					      uni.showToast({
+					       title: '加入成功',
+					       icon: 'success',
+					       mask: true
+					     });
+					   }else{
+					   					  uni.navigateTo({
+					   					  	url:"../mobile/mobile"
+					   					  })
+					   }
+				   })
 
 			   },
 			onLoad() {

@@ -619,7 +619,7 @@ var _default =
       } catch (e) {
 
       } // error
-      // uni.setstos
+
       // uni.request({
       //         url: this.serverUrl+"api/data/car",
       //   method:"POST",

@@ -6,7 +6,7 @@
 	    <input type="digit" @input="heightTap" />
 	      <view class="nav">
 	<navigator class="url" url="../yangtai/yangtai">➤前往阳台窗</navigator>
-	<navigator  class="url" url="../hejinmen/hejinmen">➤前往钛镁合金门</navigator>
+	<navigator  class="url" url="../hejin/hejin">➤前往钛镁合金门</navigator>
 	</view>
 	  </view>
 	
@@ -487,7 +487,7 @@
 				   } catch (e) {
 				       // error
 				   }
-				   // uni.setstos
+	
 				   // uni.request({
 				   //         url: this.serverUrl+"api/data/car",
 						 //   method:"POST",

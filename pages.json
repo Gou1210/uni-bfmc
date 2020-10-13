@@ -19,7 +19,7 @@
 			}
 		},
 		{
-			"path": "pages/mine/mine",
+			"path": "pages/guanyu/guanyu",
 			"style": {
 				"navigationBarTitleText": "北方门窗商城"
 			}
@@ -41,12 +41,54 @@
 			"style": {
 				"navigationBarTitleText": "北方门窗商城"
 			}
+		},
+		{
+			"path": "pages/yangtai/yangtai",
+			"style": {
+				"navigationBarTitleText": "北方门窗商城"
+			}
+		},
+		{
+			"path": "pages/hejin/hejin",
+			"style": {
+				"navigationBarTitleText": "北方门窗商城"
+			}
+		},
+		{
+			"path": "pages/me/me",
+			"style": {
+				"navigationBarTitleText": "北方门窗商城"
+			}
+		},
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "北方门窗商城"
+			}
+		},
+		{
+			"path": "pages/regist/regist",
+			"style": {
+				"navigationBarTitleText": "北方门窗商城"
+			}
+		},
+		{
+			"path": "pages/phone/phone",
+			"style": {
+				"navigationBarTitleText": "北方门窗商城"
+			}
+		},
+		{
+			"path": "pages/mobile/mobile",
+			"style": {
+				"navigationBarTitleText": "北方门窗商城"
+			}
 		}
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
+		"navigationBarBackgroundColor": "#F5F5F5",
 		"backgroundColor": "#F8F8F8"
 	},
 	"tabBar": {
@@ -70,7 +112,7 @@
 	        "selectedIconPath": "static/image/icon/dingdan1.png",
 	        "text": "订单"
 	    }, {
-	        "pagePath": "pages/mine/mine",
+	        "pagePath": "pages/me/me",
 	        "iconPath": "static/image/icon/women.png",
 	        "selectedIconPath": "static/image/icon/women1.png",
 	        "text": "我的"

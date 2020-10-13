@@ -3,16 +3,23 @@
     "pages/index/index",
     "pages/dongkou/dongkou",
     "pages/car/car",
-    "pages/mine/mine",
+    "pages/guanyu/guanyu",
     "pages/anli/anli",
     "pages/zhishi/zhishi",
-    "pages/menchuang/menchuang"
+    "pages/menchuang/menchuang",
+    "pages/yangtai/yangtai",
+    "pages/hejin/hejin",
+    "pages/me/me",
+    "pages/login/login",
+    "pages/regist/regist",
+    "pages/phone/phone",
+    "pages/mobile/mobile"
   ],
   "subPackages": [],
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",
-    "navigationBarBackgroundColor": "#F8F8F8",
+    "navigationBarBackgroundColor": "#F5F5F5",
     "backgroundColor": "#F8F8F8"
   },
   "tabBar": {
@@ -40,7 +47,7 @@
         "text": "订单"
       },
       {
-        "pagePath": "pages/mine/mine",
+        "pagePath": "pages/me/me",
         "iconPath": "static/image/icon/women.png",
         "selectedIconPath": "static/image/icon/women1.png",
         "text": "我的"
